@@ -129,6 +129,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   starBulletSpeed: 1
+  myStar: {fileID: 212082107733748172}
   Damage: 25
 --- !u!212 &212082107733748172
 SpriteRenderer:

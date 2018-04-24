@@ -143,7 +143,7 @@ public class celione_Player : MonoBehaviour {
     {
         celioneVelocity = 0f;
         //Jump
-        if (Input.GetKey(KeyCode.W) && myCelioneGrounded) // if grounded and not wallsliding then the player can jump
+        if (Input.GetKeyDown(KeyCode.W) && myCelioneGrounded) // if grounded and not wallsliding then the player can jump
         {
             GetComponent<Rigidbody2D>().velocity = new Vector2(0, celioneJumpHeight); // dictates how high you jump
 

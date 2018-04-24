@@ -6,13 +6,20 @@ public class starBullet : MonoBehaviour {
 
     public float starBulletSpeed = 1f;
     private celione_Player Celione;
+    public SpriteRenderer myStar;
     public float Damage = 2f;
 
     void Start()
     {
+        myStar = GetComponent<SpriteRenderer>();
         Celione = FindObjectOfType<celione_Player>();
         if (Celione.transform.localScale.x < 0) //SWITCH FOR MOUSE
+        {
             starBulletSpeed = -starBulletSpeed;
+            myStar.flipX = true;
+            
+            
+        }
     }
     // Update is called once per frame
     void Update()
