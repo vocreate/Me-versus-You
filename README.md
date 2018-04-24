@@ -1,2 +1,4 @@
 # Me-versus-You
-UNITY
+UNITY2D GAME
+
+A three player game where two of the players team up against one.
