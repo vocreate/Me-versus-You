@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 60611316523492984}
   - component: {fileID: 50291850239376626}
   - component: {fileID: 114795314968568786}
+  - component: {fileID: 61083888657079416}
   m_Layer: 0
   m_Name: starBullet
   m_TagString: Player
@@ -70,7 +71,7 @@ PolygonCollider2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1001670357111724}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -100,6 +101,31 @@ PolygonCollider2D:
       - {x: 0.015030862, y: -0.005105571}
       - {x: 0.015013807, y: 0.005119015}
       - {x: 0.005011661, y: 0.0056263274}
+--- !u!61 &61083888657079416
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1001670357111724}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0016355431, y: 0.0014310926}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.056, y: 0.054}
+    newSize: {x: 0.03, y: 0.03}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.008569295, y: 0.010249253}
+  m_EdgeRadius: 0
 --- !u!95 &95691355149002720
 Animator:
   serializedVersion: 3
