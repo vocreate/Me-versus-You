@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class celion_Player : MonoBehaviour {
@@ -28,7 +29,11 @@ public class celion_Player : MonoBehaviour {
     **ERASE** SHIELD BLOCK                                                **ERASE**
     **ERASE** SLASH                                                       **ERASE**
     */
-
+    //Health
+    public float myMaxHealth = 100f;
+    public float myCurrentHealth = 100f;
+    public Image myHealthBar;
+    public Image delayedHealthBar;
     //Movement Variables
     private float celionVelocity;
     public float celionSpeed = .5f;
@@ -88,6 +93,7 @@ public class celion_Player : MonoBehaviour {
         CelionShoot();
 
         myCelionGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsGround);
+        delayedHealthBar.fillAmount = Mathf.Lerp(delayedHealthBar.fillAmount, myHealthBar.fillAmount, 2.75f * Time.deltaTime);
 
     }
     //responsible for Celion's attacks
@@ -180,6 +186,36 @@ public class celion_Player : MonoBehaviour {
             GetComponent<Rigidbody2D>().AddForce(new Vector2(-this.transform.localScale.x * KnockBackAmount / 2, 0) * 100 * Time.deltaTime * .5f, ForceMode2D.Impulse);
 
         }
+    }
+    public void Damage(float Damage)
+    {
+        myCurrentHealth -= Damage;
+        float totalHealth = myCurrentHealth / myMaxHealth;
+        setHealth(totalHealth);
+        //enemyHealthAnim.SetBool("myShake", true);
+        //myShake = true;
+        //myNextShake = Time.time + myShakeCd;
+        if (myCurrentHealth < 0)
+        {
+            myCurrentHealth = myMaxHealth;
+        }
+
+    }
+    void setHealth(float myHealth)
+    {
+        myHealthBar.fillAmount = myHealth;
+    }
+    public void soundDamage(string sound)
+    {
+        if (sound == "knifeHit")
+        {
+            audioManager.PlaySound("knifeHit");
+        }
+        if (sound == "bulletHit")
+        {
+            audioManager.PlaySound("bulletHit");
+        }
+
     }
 
 

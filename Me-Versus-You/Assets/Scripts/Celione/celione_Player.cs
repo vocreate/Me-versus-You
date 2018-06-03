@@ -1,9 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class celione_Player : MonoBehaviour {
 
+    //Health
+    public float myMaxHealth = 100f;
+    public float myCurrentHealth = 100f;
+    public Image myHealthBar;
+    public Image delayedHealthBar;
     //Movement Variables
     private float celioneVelocity;
     public float celioneSpeed = .5f;
@@ -57,6 +63,7 @@ public class celione_Player : MonoBehaviour {
         anim.SetBool("Attacking", myCelioneAttacking);
         anim.SetBool("Charging", myCelioneCharging);
         myCelioneGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsGround);
+        delayedHealthBar.fillAmount = Mathf.Lerp(delayedHealthBar.fillAmount, myHealthBar.fillAmount, 2.75f * Time.deltaTime);
     }
     void CelioneShoot()
     {
@@ -165,4 +172,36 @@ public class celione_Player : MonoBehaviour {
         celioneRigidBody2D.velocity = new Vector2(celioneVelocity, celioneRigidBody2D.velocity.y);
         anim.SetFloat("Speed", Mathf.Abs(GetComponent<Rigidbody2D>().velocity.x));
     }
+
+    public void Damage(float Damage)
+    {
+        myCurrentHealth -= Damage;
+        float totalHealth = myCurrentHealth / myMaxHealth;
+        setHealth(totalHealth);
+        //enemyHealthAnim.SetBool("myShake", true);
+        //myShake = true;
+        //myNextShake = Time.time + myShakeCd;
+        if (myCurrentHealth < 0)
+        {
+            myCurrentHealth = myMaxHealth;
+        }
+
+    }
+    void setHealth(float myHealth)
+    {
+        myHealthBar.fillAmount = myHealth;
+    }
+    public void soundDamage(string sound)
+    {
+        if (sound == "knifeHit")
+        {
+            celion.audioManager.PlaySound("knifeHit");
+        }
+        if (sound == "bulletHit")
+        {
+            celion.audioManager.PlaySound("bulletHit");
+        }
+
+    }
+
 }

@@ -783,7 +783,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 2
   m_AngularDrag: 0
-  m_GravityScale: 1.75
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -801,7 +801,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.00521186, y: 0.001699582}
+  m_Offset: {x: 0.01236029, y: -0.012677625}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -812,7 +812,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.05113313, y: 0.05716524}
+  m_Size: {x: 0.05219814, y: 0.028410822}
   m_EdgeRadius: 0
 --- !u!114 &484507516
 MonoBehaviour:
@@ -825,6 +825,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f6d6d0592c046142ae389983c7f288a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myMaxHealth: 1000
+  myCurrentHealth: 1000
+  myHealthBar: {fileID: 1872604966}
+  delayedHealthBar: {fileID: 1252989443}
   celioneSpeed: 0.5
   celioneJumpHeight: 2
   myNextShot: 0
@@ -1367,7 +1371,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0
-  m_GravityScale: 1.75
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 0
@@ -1384,6 +1388,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49e30bea596502c44ad3c36d41b43f06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myMaxHealth: 1000
+  myCurrentHealth: 1000
+  myHealthBar: {fileID: 126846466}
+  delayedHealthBar: {fileID: 1198956559}
   celionSpeed: 0.5
   celionJumpHeight: 2
   myNextShot: 0

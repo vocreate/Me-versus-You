@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 95976531374758376}
   m_Layer: 0
   m_Name: knifeBullet
-  m_TagString: Player
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -76,7 +76,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0021231174, y: -0.04978644}
+  m_Offset: {x: -0.0029279552, y: -0.05259259}
   m_SpriteTilingProperty:
     border: {x: 0.020000001, y: 0.012, z: 0.020000001, w: 0.008}
     pivot: {x: 0.5, y: 0.5}
@@ -87,7 +87,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.025291383, y: 0.09664817}
+  m_Size: {x: 0.015189238, y: 0.05399467}
   m_EdgeRadius: 0
 --- !u!95 &95976531374758376
 Animator:
@@ -118,8 +118,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   knifeSpeed: 0.2
-  celion: {fileID: 0}
-  otherObject: {fileID: 0}
   Damage: 100
 --- !u!212 &212234869627492748
 SpriteRenderer:

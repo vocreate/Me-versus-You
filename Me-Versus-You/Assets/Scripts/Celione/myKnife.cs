@@ -18,13 +18,13 @@ public class myKnife : MonoBehaviour {
     }
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.tag != "Player" && col.tag != "Ground")
+        if (col.tag != "Enemy" && col.tag != "Ground")
 
         {
             Destroy(gameObject);
             
         }
-        if (col.isTrigger != true && col.CompareTag("Enemy"))
+        if (col.isTrigger != true && col.CompareTag("Player"))
         {
             col.SendMessageUpwards("Damage", Damage);
             col.SendMessageUpwards("soundDamage", "knifeHit");
